@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  aggregator:
+    image: aggregator:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  postgres_db:
+    image: postgres:11.8
+    environment:
+      - POSTGRES_DB=compose-postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
