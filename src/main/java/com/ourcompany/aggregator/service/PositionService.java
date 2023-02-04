@@ -10,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -45,6 +48,12 @@ public class PositionService {
 
     public Position findById(final long id)  {
         return new PositionDTO(positionRepository.mustFindByIdAndDeletedIsFalse(id));
+    }
+
+    public List<Position> findAllByProjectId(final long id) {
+        return positionRepository.findAllByProjectIdAndDeletedIsFalse(id).stream()
+                .map(PositionDTO::new)
+                .collect(Collectors.toList());
     }
 
 }

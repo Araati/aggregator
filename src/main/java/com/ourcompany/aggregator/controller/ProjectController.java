@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/project")
@@ -35,6 +36,11 @@ public class ProjectController {
     @GetMapping("/{id}")
     public Project findById(@PathVariable final long id)    {
         return projectFacade.findById(id);
+    }
+
+    @GetMapping
+    public List<Project> getAll() {
+        return projectFacade.getAll();
     }
 
 }

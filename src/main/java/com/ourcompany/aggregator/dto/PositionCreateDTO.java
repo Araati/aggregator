@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PositionCreateDTO {
 
+    @JsonProperty(value = "projectId")
+    private long projectId;
+
     @JsonProperty(value = "position")
     private String position;
 

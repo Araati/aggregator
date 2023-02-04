@@ -4,6 +4,7 @@ import com.ourcompany.aggregator.exception.ResourceNotFoundException;
 import com.ourcompany.aggregator.model.entity.ProjectEntity;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProjectRepository extends CrudRepository<ProjectEntity, Long> {
@@ -17,5 +18,7 @@ public interface ProjectRepository extends CrudRepository<ProjectEntity, Long> {
     default ProjectEntity mustFindByIdAndDeletedIsFalse(final long id)   {
         return findByIdAndDeletedIsFalse(id).orElseThrow(() -> new ResourceNotFoundException("Project", id));
     }
+
+    List<ProjectEntity> findAllByDeletedIsFalse();
 
 }

@@ -23,12 +23,16 @@ public class PositionEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
+    @Column(name = "project_id")
+    private long projectId;
+
     @Column(name = "position")
     private String position;
 
     @Column(name = "skills")
     private String skills;
 
+    @Column(name = "deleted")
     private boolean deleted;
 
     @CreationTimestamp
@@ -40,6 +44,8 @@ public class PositionEntity {
     private LocalDateTime updatedAt;
 
     public PositionEntity(final PositionCreateDTO source) {
+        this.projectId = source.getProjectId();
         this.position = source.getPosition();
+        this.skills = source.getSkills();
     }
 }

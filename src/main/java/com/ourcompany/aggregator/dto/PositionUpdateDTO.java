@@ -12,4 +12,5 @@ public class PositionUpdateDTO {
 
     @JsonProperty(value = "position", required = true)
     private String position;
+
 }

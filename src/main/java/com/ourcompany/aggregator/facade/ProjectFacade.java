@@ -7,6 +7,8 @@ import com.ourcompany.aggregator.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProjectFacade {
@@ -29,4 +31,7 @@ public class ProjectFacade {
         return projectService.findById(id);
     }
 
+    public List<Project> getAll() {
+        return projectService.getAll();
+    }
 }

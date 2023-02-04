@@ -7,6 +7,8 @@ import com.ourcompany.aggregator.service.PositionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PositionFacade {
@@ -27,6 +29,10 @@ public class PositionFacade {
 
     public Position findById(final long id)   {
         return positionService.findById(id);
+    }
+
+    public List<Position> findAllByProjectId(final long id) {
+        return positionService.findAllByProjectId(id);
     }
 
 }
