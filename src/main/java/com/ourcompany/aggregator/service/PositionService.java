@@ -24,13 +24,9 @@ public class PositionService {
 
     public Position create(final PositionCreateDTO request)   {
         projectRepository.mustFindById(request.getProjectId());
-        //PositionEntity entity = null;
-        //long projectId = request.getProjectId();
-        //if (positionRepository.mustFindById(projectId) != null) {
-            PositionEntity entity = new PositionEntity(request);
-            positionRepository.save(entity);
-            log.info("Position with {} id created", entity.getId());
-        //}
+        PositionEntity entity = new PositionEntity(request);
+        positionRepository.save(entity);
+        log.info("Position with {} id created", entity.getId());
         return new PositionDTO(entity);
     }
 
