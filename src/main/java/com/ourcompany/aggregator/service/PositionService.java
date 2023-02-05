@@ -1,6 +1,7 @@
 package com.ourcompany.aggregator.service;
 
 import com.ourcompany.aggregator.dao.PositionRepository;
+import com.ourcompany.aggregator.dao.ProjectRepository;
 import com.ourcompany.aggregator.dto.PositionCreateDTO;
 import com.ourcompany.aggregator.dto.PositionDTO;
 import com.ourcompany.aggregator.dto.PositionUpdateDTO;
@@ -19,11 +20,17 @@ import java.util.stream.Collectors;
 public class PositionService {
 
     private final PositionRepository positionRepository;
+    private final ProjectRepository projectRepository;
 
     public Position create(final PositionCreateDTO request)   {
-        PositionEntity entity = new PositionEntity(request);
-        positionRepository.save(entity);
-        log.info("Position with {} id created", entity.getId());
+        projectRepository.mustFindById(request.getProjectId());
+        //PositionEntity entity = null;
+        //long projectId = request.getProjectId();
+        //if (positionRepository.mustFindById(projectId) != null) {
+            PositionEntity entity = new PositionEntity(request);
+            positionRepository.save(entity);
+            log.info("Position with {} id created", entity.getId());
+        //}
         return new PositionDTO(entity);
     }
 

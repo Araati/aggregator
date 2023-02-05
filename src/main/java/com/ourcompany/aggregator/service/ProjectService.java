@@ -1,10 +1,13 @@
 package com.ourcompany.aggregator.service;
 
+import com.ourcompany.aggregator.dao.PositionRepository;
 import com.ourcompany.aggregator.dao.ProjectRepository;
 import com.ourcompany.aggregator.dto.ProjectCreateDTO;
 import com.ourcompany.aggregator.dto.ProjectDTO;
 import com.ourcompany.aggregator.dto.ProjectUpdateDTO;
+import com.ourcompany.aggregator.model.Position;
 import com.ourcompany.aggregator.model.Project;
+import com.ourcompany.aggregator.model.entity.PositionEntity;
 import com.ourcompany.aggregator.model.entity.ProjectEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +22,7 @@ import java.util.stream.Collectors;
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final PositionRepository positionRepository;
 
     public Project create(final ProjectCreateDTO request)   {
         ProjectEntity entity = new ProjectEntity(request);
@@ -43,6 +47,9 @@ public class ProjectService {
 
     public void delete(final long id)   {
         projectRepository.save(projectRepository.mustFindById(id).withDeleted(true));
+        positionRepository.saveAll(positionRepository.findAllByProjectIdAndDeletedIsFalse(id).stream()
+                                    .map(positionEntity -> positionEntity.withDeleted(true))
+                                    .collect(Collectors.toList()));
         log.info("Project with {} id deleted", id);
     }
 

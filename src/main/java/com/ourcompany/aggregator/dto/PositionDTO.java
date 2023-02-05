@@ -2,7 +2,6 @@ package com.ourcompany.aggregator.dto;
 
 import com.ourcompany.aggregator.model.Position;
 import com.ourcompany.aggregator.model.entity.PositionEntity;
-import com.sun.xml.bind.v2.TODO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
