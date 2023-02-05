@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -20,10 +21,13 @@ public class ProjectDTO implements Project {
 
     private LocalDateTime updatedAt;
 
+    private List<Long> tagList;
+
     public ProjectDTO(final ProjectEntity source) {
         this.id = source.getId();
         this.description = source.getDescription();
         this.createdAt = source.getCreatedAt();
         this.updatedAt = source.getUpdatedAt();
+        this.tagList = source.getTagList();
     }
 }

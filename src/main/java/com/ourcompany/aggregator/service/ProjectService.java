@@ -30,11 +30,13 @@ public class ProjectService {
     }
 
     public Project update(final ProjectUpdateDTO request, final long id)   {
+        // TODO: 05.02.2023 сделать проверку на существование тэгов
         ProjectEntity entity = projectRepository.mustFindById(id);
 
         //В случае добавление новых полей в Project необходимо расширить код ниже
         entity = entity
-                .withDescription(request.getDescription());
+                .withDescription(request.getDescription().orElse(entity.getDescription()))
+                .withTagList(request.getTagList().orElse(entity.getTagList()));
         projectRepository.save(entity);
         log.info("Project with {} id updated", entity.getId());
 
@@ -60,4 +62,5 @@ public class ProjectService {
                 .map(ProjectDTO::new)
                 .collect(Collectors.toList());
     }
+
 }

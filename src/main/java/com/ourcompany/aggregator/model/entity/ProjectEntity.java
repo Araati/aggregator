@@ -10,6 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -26,6 +27,10 @@ public class ProjectEntity {
     @Column(name = "description")
     private String description;
 
+    @ElementCollection
+    @Column(name = "tags")
+    private List<Long> tagList;
+
     @Column(name = "deleted")
     private boolean deleted;
 
@@ -39,5 +44,6 @@ public class ProjectEntity {
 
     public ProjectEntity(final ProjectCreateDTO source) {
         this.description = source.getDescription();
+        this.tagList = source.getTagList();
     }
 }

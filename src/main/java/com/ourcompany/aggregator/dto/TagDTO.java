@@ -15,9 +15,7 @@ public class TagDTO implements Tag {
     private long id;
     private String label;
     private String type;
-
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
 
     public TagDTO(final TagEntity source) {

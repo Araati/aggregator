@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/tag")
@@ -35,6 +36,11 @@ public class TagController {
     @GetMapping("/{id}")
     public Tag findById(@PathVariable final long id)    {
         return tagFacade.findById(id);
+    }
+
+    @GetMapping
+    public List<Tag> findAll() {
+        return tagFacade.findAll();
     }
 
 }

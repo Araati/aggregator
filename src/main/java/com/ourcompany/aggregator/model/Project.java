@@ -1,6 +1,7 @@
 package com.ourcompany.aggregator.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public interface Project {
 
@@ -8,5 +9,6 @@ public interface Project {
     String getDescription();
     LocalDateTime getCreatedAt();
     LocalDateTime getUpdatedAt();
+    List<Long> getTagList();
 
 }

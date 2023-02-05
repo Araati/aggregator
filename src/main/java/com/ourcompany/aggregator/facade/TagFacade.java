@@ -7,6 +7,8 @@ import com.ourcompany.aggregator.service.TagService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TagFacade {
@@ -27,6 +29,10 @@ public class TagFacade {
 
     public Tag findById(final long id)   {
         return tagService.findById(id);
+    }
+
+    public List<Tag> findAll() {
+        return tagService.findAll();
     }
     
 }
