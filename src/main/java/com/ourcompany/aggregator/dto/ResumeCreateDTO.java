@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class ResumeCreateDTO {
     @JsonProperty(value = "description", required = true)
     private String description;

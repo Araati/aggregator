@@ -20,9 +20,15 @@ public class ResumeUpdateDTO {
     @JsonProperty(value = "free")
     private boolean free;
 
-    public Optional<String> getDescription() { return Optional.ofNullable(description); }
+    public Optional<String> getDescription()    {
+        return Optional.ofNullable(description);
+    }
 
-    public Optional<List<Long>> getTagList() { return Optional.ofNullable(tagList); }
+    public Optional<List<Long>> getTagList()    {
+        return Optional.ofNullable(tagList);
+    }
 
-    public Optional<Boolean> isFree() { return Optional.of(free); }
+    public Optional<Boolean> isFree()   {
+        return Optional.of(free);
+    }
 }

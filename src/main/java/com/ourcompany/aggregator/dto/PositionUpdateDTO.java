@@ -16,8 +16,12 @@ public class PositionUpdateDTO {
     @JsonProperty(value = "skills")
     private String skills;
 
-    public Optional<String> getPosition() { return Optional.ofNullable(position); }
+    public Optional<String> getPosition()   {
+        return Optional.ofNullable(position);
+    }
 
-    public Optional<String> getSkills() { return Optional.ofNullable(skills); }
+    public Optional<String> getSkills() {
+        return Optional.ofNullable(skills);
+    }
 
 }

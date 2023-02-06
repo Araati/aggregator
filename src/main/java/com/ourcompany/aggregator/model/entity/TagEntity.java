@@ -37,7 +37,7 @@ public class TagEntity {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at")
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
     public TagEntity(final TagCreateDTO source) {
