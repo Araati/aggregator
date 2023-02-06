@@ -3,11 +3,13 @@ package com.ourcompany.aggregator.controller;
 import com.ourcompany.aggregator.dto.ResumeCreateDTO;
 import com.ourcompany.aggregator.dto.ResumeUpdateDTO;
 import com.ourcompany.aggregator.facade.ResumeFacade;
+import com.ourcompany.aggregator.model.Position;
 import com.ourcompany.aggregator.model.Resume;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/resume")
@@ -27,5 +29,8 @@ public class ResumeController {
 
     @GetMapping("/{id}")
     public Resume findById(@PathVariable final long id) { return resumeFacade.findById(id); }
+
+    @GetMapping("/position/{id}")
+    public List<Position> findAllPositionsForResume(@PathVariable final long id) {return resumeFacade.findAllPositionsForResume(id); }
 
 }

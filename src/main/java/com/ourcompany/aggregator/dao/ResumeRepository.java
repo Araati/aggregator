@@ -14,6 +14,8 @@ public interface ResumeRepository extends CrudRepository<ResumeEntity, Long> {
         return findById(id).orElseThrow(() -> new ResourceNotFoundException("Resume", id));
     }
 
+    ResumeEntity findByDescription(final String description);
+
     default ResumeEntity mustFindByIdAndDeletedIsFalse(final long id) {
         return findByIdAndDeletedIsFalse(id).orElseThrow(() -> new ResourceNotFoundException("Resume", id));
     }
