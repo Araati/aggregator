@@ -33,7 +33,6 @@ public class ProjectService {
         // TODO: 05.02.2023 сделать проверку на существование тэгов
         ProjectEntity entity = projectRepository.mustFindById(id);
 
-        //В случае добавление новых полей в Project необходимо расширить код ниже
         entity = entity
                 .withDescription(request.getDescription().orElse(entity.getDescription()))
                 .withTagList(request.getTagList().orElse(entity.getTagList()));
@@ -57,7 +56,7 @@ public class ProjectService {
         return new ProjectDTO(projectRepository.mustFindByIdAndDeletedIsFalse(id));
     }
 
-    public List<Project> getAll() {
+    public List<Project> findAll() {
         return projectRepository.findAllByDeletedIsFalse().stream()
                 .map(ProjectDTO::new)
                 .collect(Collectors.toList());

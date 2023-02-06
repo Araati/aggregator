@@ -31,7 +31,7 @@ public class ProjectFacade {
         return projectService.findById(id);
     }
 
-    public List<Project> getAll() {
-        return projectService.getAll();
+    public List<Project> findAll() {
+        return projectService.findAll();
     }
 }

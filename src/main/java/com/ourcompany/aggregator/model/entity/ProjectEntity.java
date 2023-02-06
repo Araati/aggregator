@@ -28,7 +28,7 @@ public class ProjectEntity {
     private String description;
 
     @ElementCollection
-    @Column(name = "tags")
+    @Column(name = "tag_list")
     private List<Long> tagList;
 
     @Column(name = "deleted")

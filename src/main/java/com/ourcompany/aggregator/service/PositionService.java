@@ -33,9 +33,9 @@ public class PositionService {
     public Position update(final PositionUpdateDTO request, final long id)   {
         PositionEntity entity = positionRepository.mustFindById(id);
 
-        //В случае добавление новых полей в position необходимо расширить код ниже
         entity = entity
-                .withPosition(request.getPosition());
+                .withPosition(request.getPosition().orElse(entity.getPosition()))
+                .withPosition(request.getSkills().orElse(entity.getSkills()));
         positionRepository.save(entity);
         log.info("Position with {} id updated", entity.getId());
 

@@ -5,18 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
+
+@Valid
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class PositionCreateDTO {
 
-    @JsonProperty(value = "projectId")
+    @JsonProperty(value = "projectId", required = true)
     private long projectId;
 
-    @JsonProperty(value = "position")
+    @JsonProperty(value = "position", required = true)
     private String position;
 
-    @JsonProperty(value = "skills")
+    @JsonProperty(value = "skills", required = true)
     private String skills;
 
 }

@@ -23,8 +23,7 @@ public class ProjectController {
     }
 
     @PostMapping("/{id}")
-    public Project update(@RequestBody final ProjectUpdateDTO request,
-                          @PathVariable final long id) {
+    public Project update(@RequestBody final ProjectUpdateDTO request, @PathVariable final long id) {
         return projectFacade.update(request, id);
     }
 
@@ -39,8 +38,8 @@ public class ProjectController {
     }
 
     @GetMapping
-    public List<Project> getAll() {
-        return projectFacade.getAll();
+    public List<Project> findAll() {
+        return projectFacade.findAll();
     }
 
 }

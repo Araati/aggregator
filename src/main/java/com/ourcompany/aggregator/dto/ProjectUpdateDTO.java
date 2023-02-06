@@ -14,7 +14,7 @@ public class ProjectUpdateDTO {
     @JsonProperty(value = "description")
     private String description;
 
-    @JsonProperty(value = "tags")
+    @JsonProperty(value = "tag_list")
     private List<Long> tagList;
 
     public Optional<String> getDescription() {

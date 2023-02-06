@@ -31,9 +31,9 @@ public class TagService {
     public Tag update(final TagUpdateDTO request, final long id)   {
         TagEntity entity = tagRepository.mustFindById(id);
 
-        //В случае добавление новых полей в tag необходимо расширить код ниже
         entity = entity
-                .withLabel(request.getLabel());
+                .withLabel(request.getLabel().orElse(entity.getLabel()))
+                .withType(request.getType().orElse(entity.getType()));
         tagRepository.save(entity);
         log.info("Tag with {} id updated", entity.getId());
 

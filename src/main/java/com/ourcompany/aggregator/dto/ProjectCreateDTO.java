@@ -5,17 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
 import java.util.List;
 
+@Valid
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProjectCreateDTO {
 
-    @JsonProperty(value = "description")
+    @JsonProperty(value = "description", required = true)
     private String description;
 
-    @JsonProperty(value = "tags")
+    @JsonProperty(value = "tag_list", required = true)
     private List<Long> tagList;
 
 }
