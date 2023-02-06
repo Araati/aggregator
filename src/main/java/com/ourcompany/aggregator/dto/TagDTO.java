@@ -1,33 +1,28 @@
 package com.ourcompany.aggregator.dto;
 
-import com.ourcompany.aggregator.model.Project;
-import com.ourcompany.aggregator.model.entity.ProjectEntity;
+import com.ourcompany.aggregator.model.Tag;
+import com.ourcompany.aggregator.model.entity.TagEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectDTO implements Project {
-
+public class TagDTO implements Tag {
     private long id;
-    private String description;
-
+    private String label;
+    private String type;
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
 
-    private List<Long> tagList;
-
-    public ProjectDTO(final ProjectEntity source) {
+    public TagDTO(final TagEntity source) {
         this.id = source.getId();
-        this.description = source.getDescription();
+        this.label = source.getLabel();
+        this.type = source.getType();
         this.createdAt = source.getCreatedAt();
         this.updatedAt = source.getUpdatedAt();
-        this.tagList = source.getTagList();
     }
 }

@@ -6,18 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Valid
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectCreateDTO {
+public class TagCreateDTO {
 
-    @JsonProperty(value = "description", required = true)
-    private String description;
+    @JsonProperty(value = "label", required = true)
+    private String label;
 
-    @JsonProperty(value = "tag_list", required = true)
-    private List<Long> tagList;
+    @JsonProperty(value = "type", required = true)
+    private String type;
 
 }

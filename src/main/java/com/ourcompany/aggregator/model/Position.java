@@ -1,14 +1,12 @@
 package com.ourcompany.aggregator.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-public interface Project {
-
+public interface Position {
     long getId();
-    String getDescription();
+    long getProjectId();
+    String getPosition();
+    String getSkills();
     LocalDateTime getCreatedAt();
     LocalDateTime getUpdatedAt();
-    List<Long> getTagList();
-
 }

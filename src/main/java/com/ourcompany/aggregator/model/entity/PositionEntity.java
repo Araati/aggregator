@@ -1,6 +1,6 @@
 package com.ourcompany.aggregator.model.entity;
 
-import com.ourcompany.aggregator.dto.ProjectCreateDTO;
+import com.ourcompany.aggregator.dto.PositionCreateDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,26 +10,27 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @With
-@Table(name = "project")
+@Table(name = "position")
 @Entity
-public class ProjectEntity {
+public class PositionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "project_id")
+    private long projectId;
 
-    @ElementCollection
-    @Column(name = "tag_list")
-    private List<Long> tagList;
+    @Column(name = "position")
+    private String position;
+
+    @Column(name = "skills")
+    private String skills;
 
     @Column(name = "deleted")
     private boolean deleted;
@@ -42,8 +43,9 @@ public class ProjectEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-    public ProjectEntity(final ProjectCreateDTO source) {
-        this.description = source.getDescription();
-        this.tagList = source.getTagList();
+    public PositionEntity(final PositionCreateDTO source) {
+        this.projectId = source.getProjectId();
+        this.position = source.getPosition();
+        this.skills = source.getSkills();
     }
 }

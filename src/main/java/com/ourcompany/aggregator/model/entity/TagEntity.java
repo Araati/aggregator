@@ -1,6 +1,6 @@
 package com.ourcompany.aggregator.model.entity;
 
-import com.ourcompany.aggregator.dto.ProjectCreateDTO;
+import com.ourcompany.aggregator.dto.TagCreateDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,26 +10,24 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @With
-@Table(name = "project")
+@Table(name = "tag")
 @Entity
-public class ProjectEntity {
+public class TagEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "label")
+    private String label;
 
-    @ElementCollection
-    @Column(name = "tag_list")
-    private List<Long> tagList;
+    @Column(name = "type")
+    private String type;
 
     @Column(name = "deleted")
     private boolean deleted;
@@ -39,11 +37,11 @@ public class ProjectEntity {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public ProjectEntity(final ProjectCreateDTO source) {
-        this.description = source.getDescription();
-        this.tagList = source.getTagList();
+    public TagEntity(final TagCreateDTO source) {
+        this.label = source.getLabel();
+        this.type = source.getType();
     }
 }
