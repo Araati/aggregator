@@ -5,15 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
-@Valid
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProjectCreateDTO {
 
+    @NotBlank(message = "description should not be blank")
     @JsonProperty(value = "description", required = true)
     private String description;
 
