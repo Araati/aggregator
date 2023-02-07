@@ -24,7 +24,7 @@ public class PositionController {
 
     @PostMapping("/{id}")
     public Position update(@RequestBody final PositionUpdateDTO request,
-                          @PathVariable final long id) {
+                           @PathVariable final long id) {
         return positionFacade.update(request, id);
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectCreateDTO {
+public class ResumeCreateDTO {
 
     @NotBlank(message = "description should not be blank")
     @JsonProperty(value = "description", required = true)
@@ -20,4 +20,6 @@ public class ProjectCreateDTO {
     @JsonProperty(value = "tag_list", required = true)
     private List<Long> tagList;
 
+    @JsonProperty(value = "free", required = true)
+    private boolean free;
 }

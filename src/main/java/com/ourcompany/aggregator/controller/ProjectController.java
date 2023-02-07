@@ -23,7 +23,8 @@ public class ProjectController {
     }
 
     @PostMapping("/{id}")
-    public Project update(@RequestBody final ProjectUpdateDTO request, @PathVariable final long id) {
+    public Project update(@RequestBody final ProjectUpdateDTO request,
+                          @PathVariable final long id) {
         return projectFacade.update(request, id);
     }
 

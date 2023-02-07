@@ -20,4 +20,6 @@ public interface PositionRepository extends CrudRepository<PositionEntity, Long>
         return findByIdAndDeletedIsFalse(id).orElseThrow(() -> new ResourceNotFoundException("Position", id));
     }
 
+    List<PositionEntity> findAllByDeletedIsFalse();
+
 }

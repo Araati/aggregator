@@ -1,7 +1,6 @@
 package com.ourcompany.aggregator.dao;
 
 import com.ourcompany.aggregator.exception.ResourceNotFoundException;
-import com.ourcompany.aggregator.model.entity.PositionEntity;
 import com.ourcompany.aggregator.model.entity.TagEntity;
 import org.springframework.data.repository.CrudRepository;
 
