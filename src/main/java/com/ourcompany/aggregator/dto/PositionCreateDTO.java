@@ -5,9 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
-@Valid
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,9 +15,11 @@ public class PositionCreateDTO {
     @JsonProperty(value = "projectId", required = true)
     private long projectId;
 
+    @NotBlank(message = "position should not be blank")
     @JsonProperty(value = "position", required = true)
     private String position;
 
+    @NotBlank(message = "skills should not be blank")
     @JsonProperty(value = "skills", required = true)
     private String skills;
 
