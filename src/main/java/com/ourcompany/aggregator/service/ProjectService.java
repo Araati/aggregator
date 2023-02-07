@@ -35,8 +35,8 @@ public class ProjectService {
 
         //убрать optional,
         entity = entity
-                .withDescription(request.getDescription() == null? entity.getDescription(): request.getDescription())
-                .withTagList(request.getTagList() == null? entity.getTagList(): request.getTagList());
+                .withDescription(request.getDescription().orElse(entity.getDescription()))
+                .withTagList(request.getTagList().orElse(entity.getTagList()));
         projectRepository.save(entity);
         log.info("Project with {} id updated", entity.getId());
 

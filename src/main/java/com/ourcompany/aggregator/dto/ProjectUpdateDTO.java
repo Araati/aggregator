@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 public class ProjectUpdateDTO {
 
     @JsonProperty(value = "description")
@@ -19,12 +18,12 @@ public class ProjectUpdateDTO {
     @JsonProperty(value = "tag_list")
     private List<Long> tagList;
 
-//    public Optional<String> getDescription() {
-//        return Optional.ofNullable(description);
-//    }
-//
-//    public Optional<List<Long>> getTagList() {
-//        return Optional.ofNullable(tagList);
-//    }
+    public Optional<String> getDescription() {
+        return Optional.ofNullable(description);
+    }
+
+    public Optional<List<Long>> getTagList() {
+        return Optional.ofNullable(tagList);
+    }
 
 }

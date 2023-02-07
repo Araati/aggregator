@@ -32,8 +32,8 @@ public class TagService {
         TagEntity entity = tagRepository.mustFindById(id);
 
         entity = entity
-                .withLabel(request.getLabel() == null? entity.getLabel():request.getLabel())
-                .withType(request.getType() == null? entity.getType():request.getType());
+                .withLabel(request.getLabel().orElse(entity.getLabel()))
+                .withType(request.getType().orElse(entity.getType()));
         tagRepository.save(entity);
         log.info("Tag with {} id updated", entity.getId());
 
