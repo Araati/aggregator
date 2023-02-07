@@ -35,7 +35,7 @@ public class PositionService {
 
         entity = entity
                 .withPosition(request.getPosition().orElse(entity.getPosition()))
-                .withSkills(request.getSkills().orElse(entity.getSkills()));
+                .withPosition(request.getSkills().orElse(entity.getSkills()));
         positionRepository.save(entity);
         log.info("Position with {} id updated", entity.getId());
 
