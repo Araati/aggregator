@@ -33,7 +33,6 @@ public class ProjectService {
         // TODO: 05.02.2023 сделать проверку на существование тэгов
         ProjectEntity entity = projectRepository.mustFindById(id);
 
-        //убрать optional,
         entity = entity
                 .withDescription(request.getDescription().orElse(entity.getDescription()))
                 .withTagList(request.getTagList().orElse(entity.getTagList()));
