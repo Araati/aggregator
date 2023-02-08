@@ -1,6 +1,6 @@
 package com.ourcompany.content.dao;
 
-import com.ourcompany.content.exception.ResourceNotFoundException;
+import exception.ResourceNotFoundException;
 import com.ourcompany.content.model.entity.PositionEntity;
 import org.springframework.data.repository.CrudRepository;
 
