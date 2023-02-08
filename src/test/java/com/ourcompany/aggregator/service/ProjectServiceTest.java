@@ -39,6 +39,7 @@ class ProjectServiceTest {
 
     @Autowired
     private WebApplicationContext context;
+    @Autowired
     private ObjectMapper mapper;
 
     private MockMvc mvc;
@@ -50,7 +51,6 @@ class ProjectServiceTest {
     @BeforeEach
     void setup() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        mapper = new ObjectMapper();
         projectService = Mockito.mock(ProjectService.class);
     }
 

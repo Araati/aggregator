@@ -36,6 +36,7 @@ class TagServiceTest {
 
     @Autowired
     private WebApplicationContext context;
+    @Autowired
     private ObjectMapper mapper;
 
     private MockMvc mvc;
@@ -47,7 +48,6 @@ class TagServiceTest {
     @BeforeEach
     void setup() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        mapper = new ObjectMapper();
         tagService = Mockito.mock(TagService.class);
     }
 

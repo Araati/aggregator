@@ -40,6 +40,7 @@ class PositionServiceTest {
 
     @Autowired
     private WebApplicationContext context;
+    @Autowired
     private ObjectMapper mapper;
 
     private MockMvc mvc;
@@ -54,7 +55,6 @@ class PositionServiceTest {
     @BeforeEach
     void setup() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        mapper = new ObjectMapper();
         positionService = Mockito.mock(PositionService.class);
     }
 

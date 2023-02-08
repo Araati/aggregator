@@ -40,6 +40,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ResumeServiceTest {
     @Autowired
     private WebApplicationContext context;
+    @Autowired
     private ObjectMapper mapper;
 
     private MockMvc mvc;
@@ -55,7 +56,6 @@ class ResumeServiceTest {
     @BeforeEach
     void setup() {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        mapper = new ObjectMapper();
         resumeService = Mockito.mock(ResumeService.class);
     }
 
