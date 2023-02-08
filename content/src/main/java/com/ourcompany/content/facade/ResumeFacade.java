@@ -2,8 +2,8 @@ package com.ourcompany.content.facade;
 
 import com.ourcompany.content.dto.ResumeCreateDTO;
 import com.ourcompany.content.dto.ResumeUpdateDTO;
-import com.ourcompany.content.model.Position;
-import com.ourcompany.content.model.Resume;
+import model.Position;
+import model.Resume;
 import com.ourcompany.content.service.ResumeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.ourcompany.content.facade;
 
 import com.ourcompany.content.dto.TagCreateDTO;
 import com.ourcompany.content.dto.TagUpdateDTO;
-import com.ourcompany.content.model.Tag;
+import model.Tag;
 import com.ourcompany.content.service.TagService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

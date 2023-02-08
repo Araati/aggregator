@@ -3,7 +3,7 @@ package com.ourcompany.content.controller;
 import com.ourcompany.content.dto.TagCreateDTO;
 import com.ourcompany.content.dto.TagUpdateDTO;
 import com.ourcompany.content.facade.TagFacade;
-import com.ourcompany.content.model.Tag;
+import model.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

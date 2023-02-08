@@ -3,7 +3,7 @@ package com.ourcompany.content.controller;
 import com.ourcompany.content.dto.PositionCreateDTO;
 import com.ourcompany.content.dto.PositionUpdateDTO;
 import com.ourcompany.content.facade.PositionFacade;
-import com.ourcompany.content.model.Position;
+import model.Position;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

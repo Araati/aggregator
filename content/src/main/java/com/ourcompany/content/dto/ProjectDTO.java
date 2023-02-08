@@ -1,6 +1,6 @@
 package com.ourcompany.content.dto;
 
-import com.ourcompany.content.model.Project;
+import model.Project;
 import com.ourcompany.content.model.entity.ProjectEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

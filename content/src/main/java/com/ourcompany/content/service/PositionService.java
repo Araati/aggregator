@@ -5,7 +5,7 @@ import com.ourcompany.content.dao.ProjectRepository;
 import com.ourcompany.content.dto.PositionCreateDTO;
 import com.ourcompany.content.dto.PositionDTO;
 import com.ourcompany.content.dto.PositionUpdateDTO;
-import com.ourcompany.content.model.Position;
+import model.Position;
 import com.ourcompany.content.model.entity.PositionEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

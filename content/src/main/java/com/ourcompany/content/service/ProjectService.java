@@ -5,7 +5,7 @@ import com.ourcompany.content.dao.ProjectRepository;
 import com.ourcompany.content.dto.ProjectCreateDTO;
 import com.ourcompany.content.dto.ProjectDTO;
 import com.ourcompany.content.dto.ProjectUpdateDTO;
-import com.ourcompany.content.model.Project;
+import model.Project;
 import com.ourcompany.content.model.entity.ProjectEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

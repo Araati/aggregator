@@ -2,7 +2,7 @@ package com.ourcompany.content.facade;
 
 import com.ourcompany.content.dto.ProjectCreateDTO;
 import com.ourcompany.content.dto.ProjectUpdateDTO;
-import com.ourcompany.content.model.Project;
+import model.Project;
 import com.ourcompany.content.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

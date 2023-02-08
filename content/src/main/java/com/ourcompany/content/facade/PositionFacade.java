@@ -2,7 +2,7 @@ package com.ourcompany.content.facade;
 
 import com.ourcompany.content.dto.PositionCreateDTO;
 import com.ourcompany.content.dto.PositionUpdateDTO;
-import com.ourcompany.content.model.Position;
+import model.Position;
 import com.ourcompany.content.service.PositionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

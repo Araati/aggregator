@@ -1,6 +1,6 @@
 package com.ourcompany.content.dto;
 
-import com.ourcompany.content.model.Position;
+import model.Position;
 import com.ourcompany.content.model.entity.PositionEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

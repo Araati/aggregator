@@ -4,7 +4,7 @@ import com.ourcompany.content.dao.TagRepository;
 import com.ourcompany.content.dto.TagCreateDTO;
 import com.ourcompany.content.dto.TagDTO;
 import com.ourcompany.content.dto.TagUpdateDTO;
-import com.ourcompany.content.model.Tag;
+import model.Tag;
 import com.ourcompany.content.model.entity.TagEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -3,7 +3,7 @@ package com.ourcompany.content.controller;
 import com.ourcompany.content.dto.ProjectCreateDTO;
 import com.ourcompany.content.dto.ProjectUpdateDTO;
 import com.ourcompany.content.facade.ProjectFacade;
-import com.ourcompany.content.model.Project;
+import model.Project;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

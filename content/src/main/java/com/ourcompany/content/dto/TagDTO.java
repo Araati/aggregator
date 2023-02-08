@@ -1,6 +1,6 @@
 package com.ourcompany.content.dto;
 
-import com.ourcompany.content.model.Tag;
+import model.Tag;
 import com.ourcompany.content.model.entity.TagEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

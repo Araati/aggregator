@@ -3,8 +3,8 @@ package com.ourcompany.content.controller;
 import com.ourcompany.content.dto.ResumeCreateDTO;
 import com.ourcompany.content.dto.ResumeUpdateDTO;
 import com.ourcompany.content.facade.ResumeFacade;
-import com.ourcompany.content.model.Position;
-import com.ourcompany.content.model.Resume;
+import model.Position;
+import model.Resume;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

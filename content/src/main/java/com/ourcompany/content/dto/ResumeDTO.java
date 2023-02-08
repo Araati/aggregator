@@ -1,6 +1,6 @@
 package com.ourcompany.content.dto;
 
-import com.ourcompany.content.model.Resume;
+import model.Resume;
 import com.ourcompany.content.model.entity.ResumeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
