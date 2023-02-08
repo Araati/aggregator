@@ -1,0 +1,25 @@
+package com.ourcompany.content.dao;
+
+import com.ourcompany.content.exception.ResourceNotFoundException;
+import com.ourcompany.content.model.entity.PositionEntity;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface PositionRepository extends CrudRepository<PositionEntity, Long> {
+    List<PositionEntity> findAllByProjectIdAndDeletedIsFalse(final long id);
+
+    Optional<PositionEntity> findByIdAndDeletedIsFalse(final long id);
+
+    default PositionEntity mustFindById(final long id)   {
+        return findById(id).orElseThrow(() -> new ResourceNotFoundException("Position", id));
+    }
+
+    default PositionEntity mustFindByIdAndDeletedIsFalse(final long id)   {
+        return findByIdAndDeletedIsFalse(id).orElseThrow(() -> new ResourceNotFoundException("Position", id));
+    }
+
+    List<PositionEntity> findAllByDeletedIsFalse();
+
+}
