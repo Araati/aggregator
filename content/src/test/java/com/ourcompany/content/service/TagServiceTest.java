@@ -76,7 +76,7 @@ class TagServiceTest {
         String newType = "test1";
         TagEntity entity = new TagEntity(1, label, type, false, LocalDateTime.now(), LocalDateTime.now());
         tagRepository.save(entity);
-        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post("/v1/tag/" + entity.getId())
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.patch("/v1/tag/" + entity.getId())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")

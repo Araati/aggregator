@@ -86,7 +86,7 @@ class PositionServiceTest {
         String newSkills = "test2";
         PositionEntity positionEntity = new PositionEntity(1, 1, position, skills, false, LocalDateTime.now(), LocalDateTime.now());
         positionRepository.save(positionEntity);
-        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post("/v1/position/" + positionEntity.getId())
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.patch("/v1/position/" + positionEntity.getId())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")

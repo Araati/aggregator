@@ -22,7 +22,7 @@ public class TagController {
         return tagFacade.create(request);
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public Tag update(@RequestBody final TagUpdateDTO request,
                       @PathVariable final long id) {
         return tagFacade.update(request, id);

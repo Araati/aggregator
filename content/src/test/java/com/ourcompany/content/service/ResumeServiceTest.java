@@ -87,7 +87,7 @@ class ResumeServiceTest {
         tagList.add(2);
         ResumeEntity entity = new ResumeEntity(1, description, List.of(1L, 2L), false,false, LocalDateTime.now(), LocalDateTime.now());
         resumeRepository.save(entity);
-        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post("/v1/resume/" + entity.getId())
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.patch("/v1/resume/" + entity.getId())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")

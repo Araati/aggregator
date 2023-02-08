@@ -23,7 +23,7 @@ public class ResumeController {
         return resumeFacade.create(request);
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public Resume update(@RequestBody final ResumeUpdateDTO request,
                          @PathVariable final long id)   {
         return resumeFacade.update(request, id);

@@ -22,7 +22,7 @@ public class ProjectController {
         return projectFacade.create(request);
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public Project update(@RequestBody final ProjectUpdateDTO request,
                           @PathVariable final long id) {
         return projectFacade.update(request, id);

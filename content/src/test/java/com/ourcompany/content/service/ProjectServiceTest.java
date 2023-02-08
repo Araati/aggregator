@@ -83,7 +83,7 @@ class ProjectServiceTest {
         tagList.add(2);
         ProjectEntity entity = new ProjectEntity(1, description, List.of(1L, 2L), false, LocalDateTime.now(), LocalDateTime.now());
         projectRepository.save(entity);
-        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post("/v1/project/" + entity.getId())
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.patch("/v1/project/" + entity.getId())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")

@@ -22,7 +22,7 @@ public class PositionController {
         return positionFacade.create(request);
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public Position update(@RequestBody final PositionUpdateDTO request,
                            @PathVariable final long id) {
         return positionFacade.update(request, id);
