@@ -1,4 +1,4 @@
-package com.ourcompany.content.facade;
+package com.ourcompany.user.facade;
 
 import com.ourcompany.content.dto.UserCreateDto;
 import com.ourcompany.content.service.UserService;

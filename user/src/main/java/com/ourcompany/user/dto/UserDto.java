@@ -1,4 +1,4 @@
-package com.ourcompany.content.dto;
+package com.ourcompany.user.dto;
 
 import com.ourcompany.content.model.entity.UserEntity;
 import lombok.AllArgsConstructor;

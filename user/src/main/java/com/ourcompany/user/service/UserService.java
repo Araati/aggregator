@@ -1,4 +1,4 @@
-package com.ourcompany.content.service;
+package com.ourcompany.user.service;
 
 import com.ourcompany.content.dao.UserRepository;
 import com.ourcompany.content.dto.UserCreateDto;
@@ -13,8 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.Entity;
 
 @Service
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package com.ourcompany.content.Configs;
+package com.ourcompany.user.config;
 
 import jwt.JwtTokenConfig;
 import jwt.JwtTokenProvider;

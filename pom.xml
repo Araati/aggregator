@@ -21,7 +21,8 @@
 		<module>libs/streams</module>
 		<module>libs/security</module>
 		<module>content</module>
-	</modules>
+        <module>user</module>
+    </modules>
 
     <properties>
 		<java.version>11</java.version>

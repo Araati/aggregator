@@ -1,4 +1,4 @@
-package com.ourcompany.content.controller;
+package com.ourcompany.user.controller;
 
 
 import com.ourcompany.content.dto.UserCreateDto;

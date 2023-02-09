@@ -1,4 +1,4 @@
-package com.ourcompany.content.model.entity;
+package com.ourcompany.user.model.entity;
 
 import role.Role;
 import lombok.AllArgsConstructor;

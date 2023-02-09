@@ -1,4 +1,4 @@
-package com.ourcompany.content.dao;
+package com.ourcompany.user.dao;
 
 import com.ourcompany.content.model.entity.UserEntity;
 import model.User;
